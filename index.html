@@ -1,0 +1,414 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Petros Hovhannisyan">
+
+        <title>Html Code Runner</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="images/img.png" >
+
+<style>         body {
+         background-color: limegreen;
+         }
+
+*{
+    box-sizing: border-box;
+}
+
+
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2px; 
+  padding: 14px 28px;
+  font-family: 'Staatliches', cursive;
+  font-weight: 500;
+  font-size: 18px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+
+
+
+
+
+
+#code{
+    resize:none;
+    outline:none;
+    border: 2px solid;
+    box-shadow: 3px 3px black;
+    border-radius:3px;
+    font-family: 'Boogaloo', cursive;
+    font-size:13px;
+}
+
+.run{
+    background:linear-gradient(145deg,#6B73FF,#000DFF);
+    border-radius:3px;
+    outline:none;
+    padding:5px 20px;
+    border:none;
+    color:#fff;
+    font-family: 'Staatliches', cursive;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ cursor:pointer;
+}
+
+.copy{
+    background: #FF008D;
+    border-radius:3px;
+    outline:none;
+    padding:5px 20px;
+    border:none;
+    color:#fff;
+    font-family: 'Staatliches', cursive;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ cursor:pointer;
+}
+
+
+.down{
+    background:linear-gradient(145deg,#DB3445,#F71735);
+    border-radius:3px;
+    outline:none;
+    padding:5px 20px;
+    border:none;
+    color:#fff;
+    font-family: 'Staatliches', cursive;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ cursor:pointer;
+}
+
+.back_2{
+    background:linear-gradient(145deg,#B91372,#6B0F1A);
+    border-radius:3px;
+    outline:none;
+    padding:5px 15px;
+    border:none;
+    color:#fff;
+    font-family: 'Staatliches', cursive;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ cursor:pointer;
+}
+
+#back{
+    background:linear-gradient(145deg,#B91372,#6B0F1A);
+    border-radius:3px;
+    outline:none;
+    padding:5px 20px;
+    border:none;
+    color:#fff;
+    font-family: 'Staatliches', cursive;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ cursor:pointer;
+}
+
+.input{
+    width:100%;
+    height:6%;
+    outline:none;
+    border: 2px solid;
+    box-shadow: 2px 2px black;
+    border-radius:3px;
+    font-family: 'Boogaloo', cursive;
+}
+
+#fileToLoad{
+    background:#E7BA3D;
+    border-radius:3px;
+    outline:none;
+    font-size: 14px;
+    padding:5px 20px;
+    border:none;
+    color:#000;
+    font-family: 'Staatliches', cursive;
+ text-transform: uppercase;
+ cursor:pointer;
+}
+
+#loadfile{
+    background:#7C259E;
+    border-radius:3px;
+    outline:none;
+    padding:5px 20px;
+    border:none;
+    color:#fff;
+    font-family: 'Staatliches', cursive;
+ text-transform: uppercase;
+ cursor:pointer;
+}
+
+.foot{
+    padding: 1em;
+    background:#000;
+    color: #fff;
+    left: 0;
+    bottom: 0;  
+    position: fixed ;
+    flex-shrink: 0;  
+    width: 100vw;
+    margin-top: 1em;
+    font-size: 15px;
+    font-family: 'Staatliches', cursive;
+}
+
+.img_2{
+    width:auto;
+    height:40%;
+}
+
+
+#quo{
+ width:100%;
+ padding:15px;
+ background:#f5f5f5;
+ color:#333;
+ margin:20px 0;
+ border-left:4px solid #3da1ff;
+}
+
+.icon{
+    font-size: 10px;
+    color:#BABABA;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+#gree{
+    text-align:center;
+    font-size:12;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#section, #section::before{
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  font-family: 'Staatliches', cursive;
+}
+#section{
+  border: 2px solid #42B04A;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#section::before{
+  content: "Open";
+  color: #000;
+  background: #6DFF05;
+  text-align: center;
+  line-height: 50px; /* same as height */
+  font-weight: 600;
+  position: absolute;
+  left: 0;
+  transition: 1s;
+}
+i{
+    color:#AAABA9;
+}
+#section:hover::before{
+  left: -105%;
+}
+i{
+  transition: 0.5s;
+}
+
+#contener{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.conte{
+    color: white;
+    background-color: #3F2590;
+    text-align: center;
+    font-family: 'Acme', sans-serif;
+}
+
+.open_co{
+    background:#8BFF2B;
+    border-radius:3px;
+    outline:none;
+    padding:5px 20px;
+    border:none;
+    color:#000;
+    font-family: 'Staatliches', cursive;
+   text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor:pointer;
+}
+
+fieldset
+{
+   border:none;
+}
+output
+{
+  display: inline-block;
+  min-width: 2.5em;
+}
+label, output
+{
+  padding: 2px 9px;
+  border-radius: 3px;
+  font-family: 'Roboto', sans-serif;
+  color: #FFF;
+  font-size: 1.1em;
+}
+label[for=r], output[for=r]
+{
+  background-color: #F00;
+}
+label[for=g], output[for=g]
+{
+  background-color: #0F0;
+}
+label[for=b], output[for=b]
+{
+  background-color: #00F;
+}
+#hex
+{
+     background-color: #FA0;
+}    
+#container2
+{
+     background:#E47313;
+     text-align: center;
+     padding: 40px 40px 40px 40px;
+     border-radius:30px 30px;
+}
+#heading
+{
+     font-size:22px;
+     color:#FFFFFF;
+     padding-bottom:30px;
+     border-bottom:2px solid #FFFFFF;
+     
+}</style>
+    </head>
+    
+    <body id="body">
+
+        
+        <!-- Main Screen -->
+        <section id="main">
+
+              <h1>Web IDE</h1>
+      <br>
+            <!-- Title Bar -->
+            <input class="input" id="inputFileNameToSaveAs" placeholder=" Enter Name" autocomplete="off"><br>
+                <br>
+            <!-- Text Area -->
+            <textarea id="code" placeholder=" Write Your Code Here" style="width:100%;height:60%;"></textarea><br>
+        <br>
+            <!-- Buttons -->
+            <button class="run" onclick="run()">Run</button>
+            <button class="copy" onclick="myFunction()">Copy</button>
+
+      <button class="down" onclick="saveTextAsFile()">Download</button><br>
+<br>
+      <input type="file" id="fileToLoad">
+<br><br>
+          <button onclick="loadFileAsText()" id="loadfile">Load File</button>
+      <br><br>
+
+
+        </section>
+            <!-- Iframe -->
+        <div id="ifr">
+    <button id="back" onclick="back()">Back</button>
+<br>
+<br>
+            <iframe id="out" style="width:100%;height:100%;border:solid black;background-color: white;"></iframe>
+        </div>
+
+
+
+
+    <script >
+window.onload = function() {
+  document.getElementById("ifr").style.display="none";
+};
+
+
+// run button
+function run(){
+    document.getElementById("main").style.display="none";
+    document.getElementById("ifr").style.display="block";
+    var code = document.querySelector("#code").value
+document.querySelector("#out").srcdoc = code
+}
+
+
+// back button
+
+function back(){ 
+ 
+ document.getElementById("ifr").style.display="none";
+
+document.getElementById("main").style.display="block";
+
+}
+
+
+
+function myFunction() {
+  var copyText = document.getElementById("code");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert("Copied the text: " + copyText.value); 
+}
+
+
+
+    
+
+// Download button
+  function saveTextAsFile() {   
+        var textToSave = document.getElementById("code").value;     var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});     var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);     var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;       var downloadLink = document.createElement("a");     downloadLink.download = fileNameToSaveAs;     downloadLink.innerHTML = "Download File";     downloadLink.href = textToSaveAsURL;     downloadLink.onclick = destroyClickedElement;     downloadLink.style.display = "none";     document.body.appendChild(downloadLink);       downloadLink.click(); }   function destroyClickedElement(event) {     document.body.removeChild(event.target); }   function loadFileAsText() {     var fileToLoad = document.getElementById("fileToLoad").files[0];       var fileReader = new FileReader();     fileReader.onload = function(fileLoadedEvent)     {         var textFromFileLoaded = fileLoadedEvent.target.result;         document.getElementById("amit").value = textFromFileLoaded;     };     fileReader.readAsText(fileToLoad, "UTF-8"); }
+        
+        
+// loadFileAsText
+function loadFileAsText()
+{
+    var fileToLoad = document.getElementById("fileToLoad").files[0];
+
+    var fileReader = new FileReader();
+    fileReader.onload = function(fileLoadedEvent) 
+    {
+        var textFromFileLoaded = fileLoadedEvent.target.result;
+        document.getElementById("code").value = textFromFileLoaded;
+    };
+    fileReader.readAsText(fileToLoad, "UTF-8");
+}
+
+
+       </script>
+    </body>
+</html>
